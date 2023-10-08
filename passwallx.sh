@@ -37,7 +37,7 @@ done
 
 opkg update
 sleep 3
-opkg install luci-app-passwall
+opkg install luci-app-passwall2
 sleep 3
 opkg remove dnsmasq
 sleep 3
@@ -61,8 +61,11 @@ opkg install kmod-ipt-nat
 sleep 2
 opkg install dnsmasq-full
 sleep 2
-
-
+opkg install kmod-usb-net-rndis
+sleep 2
+opkg install usb-modeswitch
+sleep 2
+opkg install ca-certificates
 >/etc/banner
 
 echo "    ___    __  ___________  __  ______  __________ ___________   __
@@ -197,7 +200,7 @@ echo -e "${YELLOW} WiFi SSID : VPN 2G ${ENDCOLOR}"
 
 echo -e "${GREEN} WiFi Key : 10203040 ${ENDCOLOR}"
 
-echo -e "${YELLOW}** NEW IP ADDRESS : 192.168.27.1 **${ENDCOLOR}"
+echo -e "${YELLOW}** NEW IP ADDRESS : 192.168.5.1 **${ENDCOLOR}"
 
 echo -e "${YELLOW}** Warning : ALL Settings Will be Change in 10 Seconds ** ${ENDCOLOR}"
 
@@ -205,7 +208,7 @@ echo -e "${MAGENTA} Made With Love By : AmirHossein Choghaei ${ENDCOLOR}"
 
 sleep 10
 
-uci set system.@system[0].hostname=By-AmirHossein
+uci set system.@system[0].hostname=KhaWifi
 
 uci commit system
 
@@ -223,7 +226,7 @@ uci commit passwall
 
 uci set network.lan.proto='static'
 uci set network.lan.netmask='255.255.255.0'
-uci set network.lan.ipaddr='192.168.27.1'
+uci set network.lan.ipaddr='192.168.5.1'
 uci set network.lan.delegate='0'
 
 
@@ -233,7 +236,7 @@ uci commit network
 uci delete wireless.radio0.disabled='1'
 uci set wireless.default_radio0.ssid='VPN 2G'
 uci set wireless.default_radio0.encryption='psk2+ccmp'
-uci set wireless.default_radio0.key='10203040'
+uci set wireless.default_radio0.key='88888888'
 uci set wireless.default_radio0.mode='ap'
 uci set wireless.default_radio0.network='lan'
 
@@ -244,7 +247,7 @@ uci commit
 echo -e "${YELLOW}** Warning : Router Will Be Reboot ... After That Login With New IP Address : 192.168.27.1 ** ${ENDCOLOR}"
 
 echo -e "${YELLOW} WiFi SSID : VPN 2G ${ENDCOLOR}"
-echo -e "${GREEN} WiFi Key : 10203040 ${ENDCOLOR}"
+echo -e "${GREEN} WiFi Key : 88888888 ${ENDCOLOR}"
 
 sleep 5
 
