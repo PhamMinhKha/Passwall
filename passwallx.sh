@@ -37,7 +37,7 @@ done
 
 opkg update
 sleep 3
-opkg install luci-app-passwall2
+opkg install luci-app-passwall
 sleep 3
 opkg remove dnsmasq
 sleep 3
