@@ -190,9 +190,9 @@ rm -f amirhossein.sh && wget https://raw.githubusercontent.com/amirhosseinchogha
 
 fi
 
-uci set system.@system[0].zonename='Asia/Tehran'
+uci set system.@system[0].zonename='Asia/Ho_Chi_Minh'
 
-uci set system.@system[0].timezone='<+0330>-3:30'
+uci set system.@system[0].timezone='<+0700>+7:00'
 
 uci commit system
 
@@ -212,17 +212,17 @@ uci set system.@system[0].hostname=KhaWifi
 
 uci commit system
 
-uci set passwall.@global[0].tcp_proxy_mode='global'
-uci set passwall.@global[0].udp_proxy_mode='global'
-uci set passwall.@global_forwarding[0].tcp_no_redir_ports='disable'
-uci set passwall.@global_forwarding[0].udp_no_redir_ports='disable'
-uci set passwall.@global_forwarding[0].udp_redir_ports='1:65535'
-uci set passwall.@global_forwarding[0].tcp_redir_ports='1:65535'
-uci set passwall.@global[0].remote_dns='8.8.4.4'
-uci set passwall.@global[0].dns_mode='udp'
-uci set passwall.@global[0].udp_node='tcp'
+#uci set passwall.@global[0].tcp_proxy_mode='global'
+#uci set passwall.@global[0].udp_proxy_mode='global'
+#uci set passwall.@global_forwarding[0].tcp_no_redir_ports='disable'
+#uci set passwall.@global_forwarding[0].udp_no_redir_ports='disable'
+#uci set passwall.@global_forwarding[0].udp_redir_ports='1:65535'
+#uci set passwall.@global_forwarding[0].tcp_redir_ports='1:65535'
+#uci set passwall.@global[0].remote_dns='8.8.4.4'
+#uci set passwall.@global[0].dns_mode='udp'
+#uci set passwall.@global[0].udp_node='tcp'
 
-uci commit passwall
+#uci commit passwall
 
 uci set network.lan.proto='static'
 uci set network.lan.netmask='255.255.255.0'
